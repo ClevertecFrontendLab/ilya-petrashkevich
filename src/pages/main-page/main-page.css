@@ -2,7 +2,7 @@
     min-height: 100dvh;
     text-align: center;
 }
-
+/*коммента*/
 .wrapper {
     background: no-repeat center/cover url("public/assets/Main_page_light.png"); /*fixed*/
 }
