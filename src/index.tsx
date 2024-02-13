@@ -8,6 +8,7 @@ import { MainPage } from './pages';
 
 import 'normalize.css';
 import './index.css';
+import {Calendar} from "@pages/calendar/calendar.tsx";
 
 const domNode = document.getElementById('root') as HTMLDivElement;
 const root = createRoot(domNode);
@@ -18,6 +19,7 @@ root.render(
             <HashRouter>
                 <Routes>
                     <Route path='/' element={<MainPage />} />
+                    <Route path='calendar' element={<Calendar />} />
                 </Routes>
             </HashRouter>
         </Provider>
