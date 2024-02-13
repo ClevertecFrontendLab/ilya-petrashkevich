@@ -19,8 +19,9 @@ const {Header, Sider, Content} = Layout;
 
 export const MainPage: React.FC = () => {
 
-
-    const isTabletOrMobile = useMediaQuery({query: '(max-width: 768px)'}) //834px
+    const isNeededResolution = useMediaQuery({query: '(max-width: 834px)'})
+    console.log(isNeededResolution)
+    const isTabletOrMobile = useMediaQuery({query: '(max-width: 768px)'}) //834px 768
     const [collapsed, setCollapsed] = useState(false);
 
 
@@ -149,7 +150,7 @@ export const MainPage: React.FC = () => {
                                 </span>
 
                                 <span className="exitBtnSpanContainer">
-                                    <Link to="">Выход</Link>
+                                    <Link style={{color: '#262626'}} to="">Выход</Link>
                                 </span>
 
                             </>
@@ -163,7 +164,7 @@ export const MainPage: React.FC = () => {
                         {
                             (!collapsed && isTabletOrMobile) &&
                             <span className="exitBtnSpanContainer">
-                                    <Link to="">Выход</Link>
+                                    <Link style={{color: '#262626'}} to="">Выход</Link>
                                 </span>
                         }
 
@@ -195,13 +196,13 @@ export const MainPage: React.FC = () => {
                                                             padding: 0,
                                                             top: -10
                                                         }}
-                                                        shape="circle" icon={<SettingOutlined
-                                                    style={{color: '#262626'}}/>}
+                                                        shape="circle"
+                                                        icon={<SettingOutlined style={{color: '#262626'}}/>}
                                                         size="middle"/>
                                             </Tooltip>
                                             :
                                             <Button
-                                                icon={<SettingOutlined style={{color: '#262626'}}/>}
+                                                icon={!isNeededResolution ? <SettingOutlined style={{color: '#262626'}}/> : null}
                                                 style={{
                                                     width: '129px',
                                                     border: '0',
